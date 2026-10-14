@@ -1,0 +1,11 @@
+# SQL Server for local development (the database used in the video).
+# Start it with:  docker compose up -d
+# The password matches api/appsettings.json. It is for local demos only.
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Demo_Passw0rd!"
+    ports:
+      - "1433:1433"
